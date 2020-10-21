@@ -5,6 +5,9 @@ const notesRouter = require('./controllers/notes');
 
 app.use(bodyParser.json());
 
+app.use(express.static('build'))
+
+
 app.use((request, response, next) => {
   console.log('This is a new request');
   console.log('IP:', request.ip);
@@ -13,7 +16,7 @@ app.use((request, response, next) => {
   next();
 })
 
-app.use('/notes', notesRouter);
+app.use('/api/notes', notesRouter);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
