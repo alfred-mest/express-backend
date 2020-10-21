@@ -5,6 +5,10 @@ const notesRouter = require('./controllers/notes');
 
 app.use(bodyParser.json());
 
+//be sure to include your own build folder
+//you can get a build folder by running
+// 'npm run build' in your terminal inside your
+//react folder
 app.use(express.static('build'))
 
 
